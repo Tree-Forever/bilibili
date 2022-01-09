@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Title</title>
+	</head>
+	<body>
+		<div id="">
+			<table border="0" cellspacing="" cellpadding="">
+				{% for k,v,m in inform %}
+				<tr>
+					<td><b>UID:</b>&nbsp{{ k }}&nbsp&nbsp</td>
+					<td><b>UP主:</b>&nbsp{{ v['name'] }}&nbsp&nbsp</td>
+					<td><b>直播间状态:</b>&nbsp{{ m }}&nbsp&nbsp&nbsp</td>
+					<td><b>爬取程序状态:</b>&nbsp{{ v['livetool_status'] }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+		
+		<div id="FILE_TXT">
+			<br><br>
+			<li><a href="/file/">SAVEFILE_TXT</a></li>
+			<br><br>
+		</div>
+		
+		<div id="send">
+			<form action="/a/live/startrecord" enctype='form-data' method='POST'>
+				UID:<br>
+			    <input type="text" name="mid" value="">
+				<input type="text" name="key" value="">
+			    <p><input type="submit" value="开始记录"></p>
+			</form>
+			
+			<form action="/a/live/deluid" enctype='form-data' method='POST'>
+				删除UID<br>
+			    <input type="text" name="del_mid" value="">
+				<input type="text" name="key" value="">
+			    <p><input type="submit" value="开始记录"></p>
+			</form>
+		</div>
+        
+
+	</body>
+</html>

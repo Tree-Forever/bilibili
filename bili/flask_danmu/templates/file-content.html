@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Title</title>
+		<style type="text/css">
+			#table-a {
+				width: 900px;
+			}
+
+			#table-a table {
+				width: 100%;
+				font-size: 20px;
+				border-collapse: collapse;
+				table-layout: fixed;
+			}
+
+			#table-a table .danmu-time {
+				text-align: center;
+				width: 26%;
+				color: #B25AC1;
+			}
+
+			#table-a table .user-name {
+				width: 26%;
+				color: #00C0FF;
+			}
+
+			#table-a table .danmu-text {
+				width: 48%;
+				color: #ff7a06;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1>弹幕数:{{ content|length }}</h1>
+		</div>
+		<div id="table-a">
+			<table border="1">
+				<tr>
+					<th class='danmu-time' align="center">时间</th>
+					<th class='user-name' align="center">用户名</th>
+					<th class='danmu-text' align="center">弹幕</th>
+				</tr>
+				{% for i in content %}
+				<tr>
+					<td class='danmu-time'>{{ i[0] }}</td>
+					<td class='user-name'>{{ i[1] }}</td>
+					<td class='danmu-text'>{{ i[2] }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</body>
+</html>

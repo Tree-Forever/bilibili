@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Title</title>
+	</head>
+	<body>
+		
+		<h3>locatepath:{{ locatepath }}</h3>
+		
+		<p>file list</p>
+        {% for k,v in filedata %}
+		<li><a href={{ '/download/'+k }}>{{ k }}</a>&nbsp&nbsp&nbsp&nbsp{{ v }}</li>
+		{% endfor %}
+		
+	</body>
+</html>
